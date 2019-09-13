@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block friends %}
+    <div class="card col-3 ml-3">
+        <div class="card-header">
+           Случайные пять друзей:
+        </div>
+        <div class="car-body">
+            {% for friend in friends %}
+                <div class="row ml-1">
+                    <div class="friends_photo">
+                        <a href="https://vk.com/id{{ friend.id }}">
+                            <img src="{{ friend.photo_50 }}">
+                        </a>
+                    </div>
+                    <div class="friends_user_info ml-1">
+                        <a href="https://vk.com/id{{ friend.id }}">
+                            {{ friend.first_name }} {{ friend.last_name }}
+
+                    </div>
+
+                </div>
+                <hr>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}
+
+
